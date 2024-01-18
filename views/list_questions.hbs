@@ -1,0 +1,23 @@
+<html>
+
+<head>
+  <title>Login </title>
+  <link rel="stylesheet" href="/static/global.css" />
+</head>
+
+<body>
+  <header>
+    <h1 class="nav-heading">Welcome to Quiz </h1>
+  </header>
+  <main class="flex-center size-screen flex-col">
+    {{#each Questions}}
+    <div class="question">
+      <p>{{question}}</p>
+      <a href="/delete_question/{{@index}}" class="option-btn">Delete</a>
+    </div>
+    <hr>
+    {{/each}}
+  </main>
+</body>
+
+</html>

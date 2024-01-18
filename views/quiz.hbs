@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Login </title>
+    <link rel="stylesheet" href="/static/global.css" />
+</head>
+
+<body>
+    <header>
+        <h1 class="nav-heading">Welcome to Quiz </h1>
+    </header>
+    <main class="flex-center">
+        <form action="/submit" method="post">
+            {{#each Questions}}
+            <div class="question">
+                <p>{{question}}</p>
+                <input type="hidden" id="answer" name="{{Id}}" />
+
+                {{#each Options}}
+                <button class="option-btn" data-index="{{@index}}">{{option}}</button>
+                {{/each}}
+            </div>
+            <hr>
+            {{/each}}
+            <input type="submit" value="submit" />
+        </form>
+    </main>
+    <footer>
+        <script src="/static/script.js"></script>
+    </footer>
+</body>
+
+</html>
